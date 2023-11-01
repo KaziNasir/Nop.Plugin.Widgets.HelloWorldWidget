@@ -17,4 +17,10 @@ public record StudentModel : BaseNopEntityModel
 
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus")]
     public MaritalStatus MaritalStatus { get; set; }
+
+    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus")]
+    public string GetMaritalStatus
+    {
+        get => Enum.GetName(typeof(MaritalStatus), MaritalStatus);
+    }
 }
