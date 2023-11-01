@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Nop.Core;
+using Nop.Core.Caching;
 using Nop.Data;
 using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 
@@ -28,5 +29,15 @@ public class StudentService : IStudentService
         });
 
         return new PagedList<Student>(rez, pageIndex, pageSize);
+    }
+
+    public virtual async Task InsertStudentAsync(Student student)
+    {
+        await _studentRepository.InsertAsync(student, false);
+    }
+
+    public virtual async Task UpdateStudentAsync(Student student)
+    {
+        await _studentRepository.UpdateAsync(student, false);
     }
 }

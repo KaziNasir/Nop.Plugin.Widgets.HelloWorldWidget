@@ -3,7 +3,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminPopupLayout.cshtml";
 }
 
-<form asp-controller="HelloWorldWidget" asp-action="Create"
+<form asp-controller="HelloWorld" asp-action="Create"
       asp-route-btnId="@Context.Request.Query["btnId"]"
       asp-route-formId="@Context.Request.Query["formId"]">
     <div class="content-header clearfix">

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 using Nop.Plugin.Widgets.HelloWorldWidget.Factories;
 using Nop.Plugin.Widgets.HelloWorldWidget.Models;
 using Nop.Plugin.Widgets.HelloWorldWidget.Services;
@@ -48,5 +49,21 @@ public class HelloWorldController : BasePluginController
         var model = new StudentModel();
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Create.cshtml", model);
 
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(StudentModel model)
+    {
+        var student = new Student() 
+        {
+            Name = model.Name,
+            DOB = model.DOB,
+            MaritalStatus = model.MaritalStatus
+        };
+        _studentService.InsertStudentAsync(student);
+
+        ViewBag.RefreshPage = true;
+
+        return View("~/Plugins/Widgets.HelloWorldWidget/Views/Create.cshtml", model);
     }
 }

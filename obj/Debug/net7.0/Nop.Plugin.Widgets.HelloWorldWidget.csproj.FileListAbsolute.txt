@@ -1,3 +1,4 @@
+E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Nop.Plugin.Widgets.HelloWorldWidget.dll
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\logo.jpg
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\plugin.json
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\Create.cshtml
@@ -6,7 +7,6 @@ E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\Configure.cshtml
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\_ViewImports.cshtml
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Nop.Plugin.Widgets.HelloWorldWidget.deps.json
-E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Nop.Plugin.Widgets.HelloWorldWidget.dll
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Nop.Plugin.Widgets.HelloWorldWidget.pdb
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\refs\Microsoft.AspNetCore.Antiforgery.dll
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
