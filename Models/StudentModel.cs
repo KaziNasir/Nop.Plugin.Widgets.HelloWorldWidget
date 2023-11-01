@@ -11,6 +11,7 @@ public record StudentModel : BaseNopEntityModel
     public string Name { get; set; }
 
     [DataType(DataType.Date)]
+    [UIHint("DateTimeNullable")]
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.DOB")]
     public DateTime DOB { get; set; }
 

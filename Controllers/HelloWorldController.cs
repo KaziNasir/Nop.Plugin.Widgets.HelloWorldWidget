@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 using Nop.Plugin.Widgets.HelloWorldWidget.Factories;
 using Nop.Plugin.Widgets.HelloWorldWidget.Models;
 using Nop.Plugin.Widgets.HelloWorldWidget.Services;
-using Nop.Services.Security;
 using Nop.Web.Framework;
 using Nop.Web.Framework.Controllers;
+using Nop.Web.Framework.Mvc;
 using Nop.Web.Framework.Mvc.Filters;
 
 namespace Nop.Plugin.Widgets.HelloWorldWidget.Controllers;
@@ -54,7 +49,7 @@ public class HelloWorldController : BasePluginController
     [HttpPost]
     public async Task<IActionResult> Create(StudentModel model)
     {
-        var student = new Student() 
+        var student = new Student()
         {
             Name = model.Name,
             DOB = model.DOB,
@@ -65,5 +60,48 @@ public class HelloWorldController : BasePluginController
         ViewBag.RefreshPage = true;
 
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Create.cshtml", model);
+    }
+
+    public async Task<IActionResult> Edit(int id)
+    {
+        var student = await _studentService.GetStorePickupPointByIdAsync(id);
+
+        if (student == null)
+            return RedirectToAction("Configure");
+
+        var model = new StudentModel()
+        {
+            Id = student.Id,
+            Name = student.Name,
+            DOB = student.DOB,
+            MaritalStatus = student.MaritalStatus
+        };
+        return View("~/Plugins/Widgets.HelloWorldWidget/Views/Edit.cshtml", model);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(StudentModel model)
+    {
+        var student = new Student()
+        {
+            Id = model.Id,
+            Name = model.Name,
+            DOB = model.DOB,
+            MaritalStatus = model.MaritalStatus
+        };
+        _studentService.UpdateStudentAsync(student);
+
+        ViewBag.RefreshPage = true;
+
+        return View("~/Plugins/Widgets.HelloWorldWidget/Views/Edit.cshtml", model);
+    }
+
+    public async Task<IActionResult> Delete(int id) 
+    {
+        var student = await _studentService.GetStorePickupPointByIdAsync(id);
+        
+        await _studentService.DeleteStudentAsync(student);
+
+        return new NullJsonResult();
     }
 }

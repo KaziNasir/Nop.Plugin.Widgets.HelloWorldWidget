@@ -14,7 +14,7 @@ public class StudentBuilder : NopEntityBuilder<Student>
 {
     public override void MapEntity(CreateTableExpressionBuilder table)
     {
-        table.WithColumn(nameof(Student.Id)).AsInt32().PrimaryKey()
+        table.WithColumn(nameof(Student.Id)).AsInt32().PrimaryKey().Identity()
             .WithColumn(nameof(Student.Name)).AsString(50)
             .WithColumn(nameof(Student.DOB)).AsDate()
             .WithColumn(nameof(Student.MaritalStatus)).AsInt16();

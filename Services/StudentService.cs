@@ -30,7 +30,10 @@ public class StudentService : IStudentService
 
         return new PagedList<Student>(rez, pageIndex, pageSize);
     }
-
+    public virtual async Task<Student> GetStorePickupPointByIdAsync(int studentId)
+    {
+        return await _studentRepository.GetByIdAsync(studentId);
+    }
     public virtual async Task InsertStudentAsync(Student student)
     {
         await _studentRepository.InsertAsync(student, false);
@@ -39,5 +42,9 @@ public class StudentService : IStudentService
     public virtual async Task UpdateStudentAsync(Student student)
     {
         await _studentRepository.UpdateAsync(student, false);
+    }
+    public virtual async Task DeleteStudentAsync(Student student)
+    {
+        await _studentRepository.DeleteAsync(student, false);
     }
 }

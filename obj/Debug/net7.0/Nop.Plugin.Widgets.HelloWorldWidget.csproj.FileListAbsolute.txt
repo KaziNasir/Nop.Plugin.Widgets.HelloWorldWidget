@@ -2,6 +2,7 @@ E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\logo.jpg
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\plugin.json
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\Create.cshtml
+E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\Edit.cshtml
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\HelloWorld.cshtml
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\_CreateOrUpdate.cshtml
 E:\BS Courses\Test Projects\nopCommerce\src\Presentation\Nop.Web\Plugins\Widgets.HelloWorldWidget\Views\Configure.cshtml
