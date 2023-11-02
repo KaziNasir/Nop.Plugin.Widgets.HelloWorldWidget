@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 
 namespace Nop.Plugin.Widgets.HelloWorldWidget.Models;
 public record StudentModel : BaseNopEntityModel

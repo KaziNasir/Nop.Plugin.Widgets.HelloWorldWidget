@@ -33,7 +33,7 @@ public class HelloWorldController : BasePluginController
 
     [HttpPost]
     public async Task<IActionResult> List(StudentSearchModel searchModel)
-    {        
+    {
         //prepare model
         var model = await _studentModelFactory.PrepareStudentListModelAsync(searchModel);
 
@@ -50,16 +50,22 @@ public class HelloWorldController : BasePluginController
     [HttpPost]
     public async Task<IActionResult> Create(StudentModel model)
     {
+        if (!model.DOB.HasValue)
+        {
+            ModelState.AddModelError("DOB", "Invalid Date of Birth.");
+            return View("~/Plugins/Widgets.HelloWorldWidget/Views/Create.cshtml", model);
+        }
+
         var student = new Student()
         {
             Name = model.Name,
-            DOB = DateOnly.FromDateTime((DateTime) model.DOB),
+            DOB = DateOnly.FromDateTime((DateTime)model.DOB),
             MaritalStatus = model.MaritalStatus
         };
         _studentService.InsertStudentAsync(student);
 
         ViewBag.RefreshPage = true;
-
+ 
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Create.cshtml", model);
     }
 
@@ -97,10 +103,10 @@ public class HelloWorldController : BasePluginController
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Edit.cshtml", model);
     }
 
-    public async Task<IActionResult> Delete(int id) 
+    public async Task<IActionResult> Delete(int id)
     {
         var student = await _studentService.GetStorePickupPointByIdAsync(id);
-        
+
         await _studentService.DeleteStudentAsync(student);
 
         return new NullJsonResult();

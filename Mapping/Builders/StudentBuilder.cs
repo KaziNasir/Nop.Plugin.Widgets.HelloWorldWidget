@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentMigrator.Builders.Create.Table;
-using Nop.Data.Extensions;
+﻿using FluentMigrator.Builders.Create.Table;
 using Nop.Data.Mapping.Builders;
 using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 

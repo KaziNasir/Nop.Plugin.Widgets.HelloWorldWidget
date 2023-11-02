@@ -1,7 +1,4 @@
-﻿using Nop.Core.Domain.Customers;
-using Nop.Core.Domain.Media;
-using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
-using Nop.Plugin.Widgets.HelloWorldWidget.Models;
+﻿using Nop.Plugin.Widgets.HelloWorldWidget.Models;
 using Nop.Plugin.Widgets.HelloWorldWidget.Services;
 using Nop.Web.Framework.Models.Extensions;
 
@@ -17,14 +14,14 @@ public class StudentModelFactory : IStudentModelFactory
 
     public async Task<StudentListModel> PrepareStudentListModelAsync(StudentSearchModel searchModel)
     {
-        var students = await _studentService.GetAllStudentsAsync(pageIndex: searchModel.Page - 1, pageSize: searchModel.PageSize, 
+        var students = await _studentService.GetAllStudentsAsync(pageIndex: searchModel.Page - 1, pageSize: searchModel.PageSize,
             searchName: searchModel.SearchName, searchDOBFrom: searchModel.SearchDOBFrom, searchDOBTo: searchModel.SearchDOBTo, selectedMaritalStatus: searchModel.SelectedMaritalStatus);
 
         var model = await new StudentListModel().PrepareToGridAsync(searchModel, students, () =>
         {
             return students.SelectAwait(async student =>
             {
-                return new StudentModel() 
+                return new StudentModel()
                 {
                     Id = student.Id,
                     Name = student.Name,
