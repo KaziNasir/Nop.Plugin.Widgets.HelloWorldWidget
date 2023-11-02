@@ -18,8 +18,13 @@ public record StudentSearchModel : BaseSearchModel
 
     [DataType(DataType.Date)]
     [UIHint("DateTimeNullable")]
-    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.DOB")]
-    public DateTime? SearchDOB { get; set; }
+    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBFrom")]
+    public DateTime? SearchDOBFrom { get; set; }
+
+    [DataType(DataType.Date)]
+    [UIHint("DateTimeNullable")]
+    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBTo")]
+    public DateTime? SearchDOBTo { get; set; }
 
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus")]
     public MaritalStatus? SearchMaritalStatus { get; set; }

@@ -41,7 +41,9 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
             ["Plugins.Widgets.HelloWorldWidget.AddNew"] = "Add a new Student",
             ["Plugins.Widgets.HelloWorldWidget.Fields.Name"] = "Name",
             ["Plugins.Widgets.HelloWorldWidget.Fields.DOB"] = "Date of Birth",
-            ["Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus"] = "Marital Status"
+            ["Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus"] = "Marital Status",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBFrom"] = "Date of Birth From",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBTo"] = "Date of Birth To"
         });
         await base.InstallAsync();
     }

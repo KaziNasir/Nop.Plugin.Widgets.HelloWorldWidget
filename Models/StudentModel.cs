@@ -13,7 +13,7 @@ public record StudentModel : BaseNopEntityModel
     [DataType(DataType.Date)]
     [UIHint("DateTimeNullable")]
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.DOB")]
-    public DateTime DOB { get; set; }
+    public DateTime? DOB { get; set; }
 
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus")]
     public MaritalStatus MaritalStatus { get; set; }

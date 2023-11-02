@@ -38,10 +38,16 @@
                                                 <nop-editor asp-for="SearchName" />
                                             </div>
                                             <div class="col-md-4">
-                                                <nop-label asp-for="SearchDOB" />
+                                                <nop-label asp-for="SearchDOBFrom" />
                                             </div>
                                             <div class="col-md-8">
-                                                <nop-editor asp-for="SearchDOB" />
+                                                <nop-editor asp-for="SearchDOBFrom" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <nop-label asp-for="SearchDOBTo" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <nop-editor asp-for="SearchDOBTo" />
                                             </div>
                                             <div class="col-md-4">
                                                 <nop-label asp-for="SearchMaritalStatus" />
@@ -82,7 +88,8 @@
                 LengthMenu = Model.AvailablePageSizes,
                 Filters = new List<FilterParameter> {
                 new FilterParameter(nameof(Model.SearchName)),
-                new FilterParameter(nameof(Model.SearchDOB)),
+                new FilterParameter(nameof(Model.SearchDOBFrom)),
+                new FilterParameter(nameof(Model.SearchDOBTo)),
                 new FilterParameter(nameof(Model.SearchMaritalStatus)),
                 },
 

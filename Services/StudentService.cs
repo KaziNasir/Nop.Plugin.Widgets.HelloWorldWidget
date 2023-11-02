@@ -18,7 +18,7 @@ public class StudentService : IStudentService
     }
 
     public virtual async Task<IPagedList<Student>> GetAllStudentsAsync(int studentId = 0, int pageIndex = 0, int pageSize = int.MaxValue, 
-        string? searchName = null, DateTime? searchDOB = null, MaritalStatus? searchMaritalStatus = null)
+        string? searchName = null, DateTime? searchDOBFrom = null, DateTime? searchDOBTo = null, MaritalStatus? searchMaritalStatus = null)
     {
         var rez = await _studentRepository.GetAllAsync(query =>
         {
@@ -30,9 +30,17 @@ public class StudentService : IStudentService
                 query = query.Where(s => s.Name.Contains(searchName));
             }
 
-            if (searchDOB.HasValue)
+            if (searchDOBFrom.HasValue)
             {
-                query = query.Where(s => s.DOB == DateOnly.FromDateTime((DateTime)searchDOB));
+                if (searchDOBTo.HasValue)
+                {
+                    query = query.Where(s => s.DOB >= DateOnly.FromDateTime((DateTime)searchDOBFrom)
+                    && s.DOB <= DateOnly.FromDateTime((DateTime)searchDOBTo));
+                }
+                else
+                {
+                    query = query.Where(s => s.DOB == DateOnly.FromDateTime((DateTime)searchDOBFrom));
+                }                
             }
 
             if (searchMaritalStatus != null && searchMaritalStatus != 0)
