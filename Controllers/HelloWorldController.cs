@@ -50,7 +50,7 @@ public class HelloWorldController : BasePluginController
     [HttpPost]
     public async Task<IActionResult> Create(StudentModel model)
     {
-        if (!model.DOB.HasValue)
+        if (!model.DOB.HasValue || model.DOB.Value > DateTime.Now)
         {
             ModelState.AddModelError("DOB", "Invalid Date of Birth.");
             return View("~/Plugins/Widgets.HelloWorldWidget/Views/Create.cshtml", model);
@@ -65,7 +65,7 @@ public class HelloWorldController : BasePluginController
         _studentService.InsertStudentAsync(student);
 
         ViewBag.RefreshPage = true;
- 
+
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Create.cshtml", model);
     }
 
