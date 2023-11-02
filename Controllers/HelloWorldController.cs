@@ -29,10 +29,18 @@ public class HelloWorldController : BasePluginController
         var model = await _studentModelFactory.PrepareStudentSearchModelAsync(new StudentSearchModel());
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Configure.cshtml", model);
     }
+/*
+    [HttpPost]
+    public virtual async Task<IActionResult> Configure(StudentSearchModel searchModel)
+    {
+        var model = await _studentModelFactory.PrepareStudentSearchModelAsync(searchModel);
+        
+        return View("~/Plugins/Widgets.HelloWorldWidget/Views/Configure.cshtml", model);
+    }*/
 
     [HttpPost]
     public async Task<IActionResult> List(StudentSearchModel searchModel)
-    {
+    {        
         //prepare model
         var model = await _studentModelFactory.PrepareStudentListModelAsync(searchModel);
 
@@ -52,7 +60,7 @@ public class HelloWorldController : BasePluginController
         var student = new Student()
         {
             Name = model.Name,
-            DOB = model.DOB,
+            DOB = DateOnly.FromDateTime((DateTime) model.DOB),
             MaritalStatus = model.MaritalStatus
         };
         _studentService.InsertStudentAsync(student);
@@ -73,7 +81,7 @@ public class HelloWorldController : BasePluginController
         {
             Id = student.Id,
             Name = student.Name,
-            DOB = student.DOB,
+            DOB = student.DOB.ToDateTime(TimeOnly.MinValue),
             MaritalStatus = student.MaritalStatus
         };
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Edit.cshtml", model);
@@ -86,7 +94,7 @@ public class HelloWorldController : BasePluginController
         {
             Id = model.Id,
             Name = model.Name,
-            DOB = model.DOB,
+            DOB = DateOnly.FromDateTime((DateTime)model.DOB),
             MaritalStatus = model.MaritalStatus
         };
         _studentService.UpdateStudentAsync(student);

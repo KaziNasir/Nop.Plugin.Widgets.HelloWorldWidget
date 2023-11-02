@@ -1,4 +1,5 @@
 ﻿@inject Nop.Core.Domain.Common.AdminAreaSettings adminAreaSettings
+@using Nop.Plugin.Widgets.HelloWorldWidget.Domain
 @using Nop.Plugin.Widgets.HelloWorldWidget.Models
 @using Nop.Web.Framework.Models.DataTables
 @model StudentSearchModel
@@ -8,10 +9,65 @@
     NopHtml.SetActiveMenuItemSystemName("nopCommerce hello world application");
     RenderDate rd = new RenderDate();
     rd.Format = "DD/MM/YYYY";
+
+    const string hideSearchBlockAttributeName = "StudentListPage.HideSearchBlock";
+    var hideSearchBlock = false;
 }
 
 <h3>Students:</h3>
 <form asp-controller="HelloWorld" asp-action="Configure" method="post" id="student-form">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="cards-group">
+                    <div class="card card-default card-search">
+                        <div class="card-body">
+                            <div class="row search-row @(!hideSearchBlock ? "opened" : "")" data-hideAttribute="@hideSearchBlockAttributeName">
+                                <div class="search-text">@T("Admin.Common.Search")</div>
+                                <div class="icon-search"><i class="fas fa-search" aria-hidden="true"></i></div>
+                                <div class="icon-collapse"><i class="far fa-angle-@(!hideSearchBlock ? "up" : "down")" aria-hidden="true"></i></div>
+                            </div>
+                            <div class="search-body @(hideSearchBlock ? "closed" : "")">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <nop-label asp-for="SearchName" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <nop-editor asp-for="SearchName" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <nop-label asp-for="SearchDOB" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <nop-editor asp-for="SearchDOB" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <nop-label asp-for="SearchMaritalStatus" />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <nop-select asp-for="SearchMaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-center col-12">
+                                        <button type="button" id="search-student" class="btn btn-primary btn-search">
+                                            <i class="fas fa-search"></i>
+                                            @T("Admin.Common.Search")
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <div class="cards-group">
         <div class="card card-default">
             <div class="card-body">
@@ -20,9 +76,15 @@
                 {
                 Name = "students-grid",
                 UrlRead = new DataUrl("List", "HelloWorld", null),
+                SearchButtonId = "search-student",
                 UrlDelete = new DataUrl("Delete", "HelloWorld", null),
                 Length = Model.PageSize,
                 LengthMenu = Model.AvailablePageSizes,
+                Filters = new List<FilterParameter> {
+                new FilterParameter(nameof(Model.SearchName)),
+                new FilterParameter(nameof(Model.SearchDOB)),
+                new FilterParameter(nameof(Model.SearchMaritalStatus)),
+                },
 
                 ColumnCollection = new List<ColumnProperty>
                 {

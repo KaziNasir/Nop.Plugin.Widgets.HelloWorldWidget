@@ -17,7 +17,8 @@ public class StudentModelFactory : IStudentModelFactory
 
     public async Task<StudentListModel> PrepareStudentListModelAsync(StudentSearchModel searchModel)
     {
-        var students = await _studentService.GetAllStudentsAsync(pageIndex: searchModel.Page - 1, pageSize: searchModel.PageSize);
+        var students = await _studentService.GetAllStudentsAsync(pageIndex: searchModel.Page - 1, pageSize: searchModel.PageSize, 
+            searchName: searchModel.SearchName, searchDOB: searchModel.SearchDOB, searchMaritalStatus: searchModel.SearchMaritalStatus);
 
         var model = await new StudentListModel().PrepareToGridAsync(searchModel, students, () =>
         {
@@ -27,8 +28,8 @@ public class StudentModelFactory : IStudentModelFactory
                 {
                     Id = student.Id,
                     Name = student.Name,
-                    DOB = student.DOB,
-                    MaritalStatus = student.MaritalStatus //Enum.GetName(typeof(MaritalStatus), student.MaritalStatus)
+                    DOB = student.DOB.ToDateTime(TimeOnly.MinValue),
+                    MaritalStatus = student.MaritalStatus
                 };
 
             });

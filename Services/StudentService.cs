@@ -17,12 +17,29 @@ public class StudentService : IStudentService
         _studentRepository = studentRepository;
     }
 
-    public virtual async Task<IPagedList<Student>> GetAllStudentsAsync(int studentId = 0, int pageIndex = 0, int pageSize = int.MaxValue)
+    public virtual async Task<IPagedList<Student>> GetAllStudentsAsync(int studentId = 0, int pageIndex = 0, int pageSize = int.MaxValue, 
+        string? searchName = null, DateTime? searchDOB = null, MaritalStatus? searchMaritalStatus = null)
     {
         var rez = await _studentRepository.GetAllAsync(query =>
         {
             if (studentId > 0)
                 query = query.Where(student => student.Id == studentId || student.Id == 0);
+
+            if(searchName != null && searchName != "")
+            {
+                query = query.Where(s => s.Name.Contains(searchName));
+            }
+
+            if (searchDOB.HasValue)
+            {
+                query = query.Where(s => s.DOB == DateOnly.FromDateTime((DateTime)searchDOB));
+            }
+
+            if (searchMaritalStatus != null && searchMaritalStatus != 0)
+            {
+                query = query.Where(s => s.MaritalStatus == searchMaritalStatus);
+            }
+
             query = query.OrderBy(student => student.Name);
 
             return query;
