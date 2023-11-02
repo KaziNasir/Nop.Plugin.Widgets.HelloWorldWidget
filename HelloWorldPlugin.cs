@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Routing;
 using Nop.Plugin.Widgets.HelloWorldWidget.Components;
 using Nop.Services.Cms;
+using Nop.Services.Localization;
 using Nop.Services.Plugins;
 using Nop.Web.Framework;
 using Nop.Web.Framework.Infrastructure;
@@ -15,6 +16,13 @@ namespace Nop.Plugin.Widgets.HelloWorldWidget;
 public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
 {
     public bool HideInWidgetList => false;
+
+    protected readonly ILocalizationService _localizationService;
+
+    public HelloWorldPlugin(ILocalizationService localizationService)
+    {
+        _localizationService = localizationService;
+    }
 
     public Type GetWidgetViewComponent(string widgetZone)
     {
@@ -28,6 +36,13 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
 
     public override async Task InstallAsync()
     {
+        await _localizationService.AddOrUpdateLocaleResourceAsync(new Dictionary<string, string>
+        {
+            ["Plugins.Widgets.HelloWorldWidget.AddNew"] = "Add a new Student",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.Name"] = "Name",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.DOB"] = "Date of Birth",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus"] = "Marital Status"
+        });
         await base.InstallAsync();
     }
 
@@ -54,6 +69,7 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
 
     public override async Task UninstallAsync()
     {
+        await _localizationService.DeleteLocaleResourcesAsync("Plugins.Widgets.HelloWorldWidget");
         await base.UninstallAsync();
     }
 
