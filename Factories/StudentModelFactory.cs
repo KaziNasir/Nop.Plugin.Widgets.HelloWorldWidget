@@ -18,7 +18,7 @@ public class StudentModelFactory : IStudentModelFactory
     public async Task<StudentListModel> PrepareStudentListModelAsync(StudentSearchModel searchModel)
     {
         var students = await _studentService.GetAllStudentsAsync(pageIndex: searchModel.Page - 1, pageSize: searchModel.PageSize, 
-            searchName: searchModel.SearchName, searchDOBFrom: searchModel.SearchDOBFrom, searchDOBTo: searchModel.SearchDOBTo, searchMaritalStatus: searchModel.SearchMaritalStatus);
+            searchName: searchModel.SearchName, searchDOBFrom: searchModel.SearchDOBFrom, searchDOBTo: searchModel.SearchDOBTo, selectedMaritalStatus: searchModel.SelectedMaritalStatus);
 
         var model = await new StudentListModel().PrepareToGridAsync(searchModel, students, () =>
         {

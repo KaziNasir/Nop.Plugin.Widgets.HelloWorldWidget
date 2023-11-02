@@ -2,16 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using Nop.Web.Framework.Models;
 using Nop.Web.Framework.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 namespace Nop.Plugin.Widgets.HelloWorldWidget.Models;
 public record StudentSearchModel : BaseSearchModel
-{
-    /*public StudentSearchModel()
-    {
-        SearchName = "";
-        SearchDOB = null;
-        SearchMaritalStatus = null;
-    }*/
+{   
 
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.Name")]
     public string SearchName { get; set; }
@@ -26,6 +22,7 @@ public record StudentSearchModel : BaseSearchModel
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBTo")]
     public DateTime? SearchDOBTo { get; set; }
 
-    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus")]
-    public MaritalStatus? SearchMaritalStatus { get; set; }
+    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus")]    
+    public IList<MaritalStatus> SelectedMaritalStatus { get; set; }
+
 }

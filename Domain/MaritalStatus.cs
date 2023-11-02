@@ -8,8 +8,6 @@ using Nop.Core;
 namespace Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 public enum MaritalStatus 
 {
-    PleaseSelectAStatus = 0,
-
     Unmarried = 1,
 
     Married = 2,

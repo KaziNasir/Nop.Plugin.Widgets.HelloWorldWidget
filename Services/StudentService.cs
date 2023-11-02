@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LinqToDB.Tools;
 using Nop.Core;
 using Nop.Core.Caching;
 using Nop.Data;
@@ -18,7 +19,7 @@ public class StudentService : IStudentService
     }
 
     public virtual async Task<IPagedList<Student>> GetAllStudentsAsync(int studentId = 0, int pageIndex = 0, int pageSize = int.MaxValue, 
-        string? searchName = null, DateTime? searchDOBFrom = null, DateTime? searchDOBTo = null, MaritalStatus? searchMaritalStatus = null)
+        string? searchName = null, DateTime? searchDOBFrom = null, DateTime? searchDOBTo = null, IList<MaritalStatus> selectedMaritalStatus = null)
     {
         var rez = await _studentRepository.GetAllAsync(query =>
         {
@@ -43,9 +44,9 @@ public class StudentService : IStudentService
                 }                
             }
 
-            if (searchMaritalStatus != null && searchMaritalStatus != 0)
+            if (selectedMaritalStatus != null && selectedMaritalStatus.Any())
             {
-                query = query.Where(s => s.MaritalStatus == searchMaritalStatus);
+                query = query.Where(s => s.MaritalStatus.In(selectedMaritalStatus));
             }
 
             query = query.OrderBy(student => student.Name);

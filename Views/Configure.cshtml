@@ -50,10 +50,10 @@
                                                 <nop-editor asp-for="SearchDOBTo" />
                                             </div>
                                             <div class="col-md-4">
-                                                <nop-label asp-for="SearchMaritalStatus" />
+                                                <nop-label asp-for="SelectedMaritalStatus" />
                                             </div>
                                             <div class="col-md-8">
-                                                <nop-select asp-for="SearchMaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" />
+                                                <nop-select asp-for="SelectedMaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" asp-multiple="true" />
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                 new FilterParameter(nameof(Model.SearchName)),
                 new FilterParameter(nameof(Model.SearchDOBFrom)),
                 new FilterParameter(nameof(Model.SearchDOBTo)),
-                new FilterParameter(nameof(Model.SearchMaritalStatus)),
+                new FilterParameter(nameof(Model.SelectedMaritalStatus)),
                 },
 
                 ColumnCollection = new List<ColumnProperty>
