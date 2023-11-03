@@ -9,8 +9,7 @@ public record StudentModel : BaseNopEntityModel
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.Name")]
     public string Name { get; set; }
 
-    [DataType(DataType.Date)]
-    [UIHint("DateTimeNullable")]
+    [UIHint("DateNullable")]
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.DOB")]
     public DateTime? DOB { get; set; }
 

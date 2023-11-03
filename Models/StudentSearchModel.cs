@@ -8,20 +8,20 @@ namespace Nop.Plugin.Widgets.HelloWorldWidget.Models;
 public record StudentSearchModel : BaseSearchModel
 {
 
-    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.Name")]
+    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.SearchName")]
     public string SearchName { get; set; }
 
     [DataType(DataType.Date)]
-    [UIHint("DateTimeNullable")]
+    [UIHint("DateNullable")]
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBFrom")]
     public DateTime? SearchDOBFrom { get; set; }
 
     [DataType(DataType.Date)]
-    [UIHint("DateTimeNullable")]
+    [UIHint("DateNullable")]
     [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBTo")]
     public DateTime? SearchDOBTo { get; set; }
 
-    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus")]
+    [NopResourceDisplayName("Plugins.Widgets.HelloWorldWidget.Fields.SearchMaritalStatus")]
     public IList<MaritalStatus> SelectedMaritalStatus { get; set; }
 
 }

@@ -25,7 +25,7 @@ public class StudentModelFactory : IStudentModelFactory
                 {
                     Id = student.Id,
                     Name = student.Name,
-                    DOB = student.DOB.ToDateTime(TimeOnly.MinValue),
+                    DOB = student.DOB,
                     MaritalStatus = student.MaritalStatus
                 };
 

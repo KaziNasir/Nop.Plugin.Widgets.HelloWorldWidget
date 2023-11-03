@@ -1,49 +1,52 @@
 @using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
+@using Nop.Plugin.Widgets.HelloWorldWidget.Components;
 @model Nop.Plugin.Widgets.HelloWorldWidget.Models.StudentModel
+
+@{
+    const string hideInfoBlockAttributeName = "StudentPage.HideInfoBlock";
+    var hideInfoBlock = false;
+}
 
 <div asp-validation-summary="All"></div>
 <input asp-for="Id" type="hidden" />
 
-@if (ViewBag.RefreshPage == true)
-{
-    <script>
-        try { window.opener.document.forms['@(Context.Request.Query["formId"])'].@(Context.Request.Query["btnId"]).click(); }
-        catch (e) { }
-        window.close();
-    </script>
-}
-
-<div class="cards-group">
-    <div class="card card-default card-popup">        
-
-        <div class="card-body">
-            <div class="form-group row">
-                <div class="col-sm-3">
-                    <nop-label asp-for="Name" />
-                </div>
-                <div class="col-sm-9">
-                    <nop-editor asp-for="Name" />
-                    <span asp-validation-for="Name"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-3">
-                    <nop-label asp-for="DOB" />
-                </div>
-                <div class="col-sm-9">
-                    <nop-editor asp-for="DOB" asp-data="DOB" />
-                    <span asp-validation-for="DOB"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-3">
-                    <nop-label asp-for="MaritalStatus" />
-                </div>
-                <div class="col-sm-9">
-                    <nop-select asp-for="MaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" />
-                    <span asp-validation-for="MaritalStatus"></span>
-                </div>
-            </div>            
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <nop-cards id="customer-cards">
+                <nop-card asp-name="student-info" asp-icon="fas fa-info" asp-title="@T("Plugin.Widgets.HelloWorldWidget.Students.Info")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="Name" />
+                            </div>
+                            <div class="col-sm-9">
+                                <nop-editor asp-for="Name" />
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="DOB" />
+                            </div>
+                            <div class="col-sm-9">
+                                <nop-editor asp-for="DOB" />
+                                <span asp-validation-for="DOB"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="MaritalStatus" />
+                            </div>
+                            <div class="col-sm-9">
+                                <nop-select asp-for="MaritalStatus" asp-items="Html.GetEnumSelectList<MaritalStatus>()" />
+                                <span asp-validation-for="MaritalStatus"></span>
+                            </div>
+                        </div>
+                    </div>
+                </nop-card>
+                
+            </nop-cards>
         </div>
     </div>
-</div>
+</section>

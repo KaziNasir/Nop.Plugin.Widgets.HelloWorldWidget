@@ -29,12 +29,12 @@ public class StudentService : IStudentService
             {
                 if (searchDOBTo.HasValue)
                 {
-                    query = query.Where(s => s.DOB >= DateOnly.FromDateTime((DateTime)searchDOBFrom)
-                    && s.DOB <= DateOnly.FromDateTime((DateTime)searchDOBTo));
+                    query = query.Where(s => s.DOB >= searchDOBFrom
+                    && s.DOB <= searchDOBTo);
                 }
                 else
                 {
-                    query = query.Where(s => s.DOB == DateOnly.FromDateTime((DateTime)searchDOBFrom));
+                    query = query.Where(s => s.DOB == searchDOBFrom);
                 }
             }
 
@@ -43,7 +43,7 @@ public class StudentService : IStudentService
                 query = query.Where(s => s.MaritalStatus.In(selectedMaritalStatus));
             }
 
-            query = query.OrderBy(student => student.Name);
+            query = query.OrderBy(student => student.Id);
 
             return query;
         });

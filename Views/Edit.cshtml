@@ -1,6 +1,10 @@
 @model Nop.Plugin.Widgets.HelloWorldWidget.Models.StudentModel
 @{
-    Layout = "~/Areas/Admin/Views/Shared/_AdminPopupLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    //page title
+    ViewBag.PageTitle = T("Admin.Common.Edit").Text;
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName("Customers list");
 }
 
 <form asp-controller="HelloWorld" asp-action="Edit"
@@ -9,12 +13,24 @@
     <div class="content-header clearfix">
         <h1 class="float-left">
             @T("Admin.Common.Edit")
+            <small>
+                <i class="fas fa-arrow-circle-left"></i>
+                <a asp-action="Configure">@T("Plugin.Widgets.HelloWorldWidget.BackToList")</a>
+            </small>
         </h1>
         <div class="float-right">
             <button type="submit" name="save" class="btn btn-primary">
                 <i class="far fa-save"></i>
                 @T("Admin.Common.Save")
             </button>
+            <button type="submit" name="save-continue" class="btn btn-primary">
+                <i class="far fa-save"></i>
+                @T("Admin.Common.SaveContinue")
+            </button>
+            <span id="customer-delete" class="btn btn-danger">
+                <i class="far fa-trash-alt"></i>
+                @T("Admin.Common.Delete")
+            </span>
         </div>
     </div>
 
@@ -24,3 +40,4 @@
         </div>
     </div>
 </form>
+<nop-delete-confirmation asp-model-id="@Model.Id" asp-button-id="customer-delete" />

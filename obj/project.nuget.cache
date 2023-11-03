@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bNoDPM2EMA2RfjWVMEBcssUB4E2FQqgDDHWZdAXezrTtGjubyrTOujrnRcSMFJIXz7DsGMJWQkKjPdRsctqOjQ==",
+  "dgSpecHash": "V5xGOHa7vGVgyAhHR70+zGCzn5o+JWCTRVbnvKz6RaVCGjlD0PJEc9X7z5RrSAvKwNGuUF7sycfj3wUYmDhpBg==",
   "success": true,
   "projectFilePath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj",
   "expectedPackageFiles": [

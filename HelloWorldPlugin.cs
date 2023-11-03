@@ -11,7 +11,6 @@ namespace Nop.Plugin.Widgets.HelloWorldWidget;
 public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
 {
     public bool HideInWidgetList => false;
-
     protected readonly ILocalizationService _localizationService;
 
     public HelloWorldPlugin(ILocalizationService localizationService)
@@ -35,10 +34,22 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
         {
             ["Plugins.Widgets.HelloWorldWidget.AddNew"] = "Add a new Student",
             ["Plugins.Widgets.HelloWorldWidget.Fields.Name"] = "Name",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchName"] = "Name",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchName.Hint"] = "Name of the student you want to search",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.Name.Hint"] = "Name of the student",
             ["Plugins.Widgets.HelloWorldWidget.Fields.DOB"] = "Date of Birth",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.DOB.Hint"] = "Select the date of of birth",
             ["Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus"] = "Marital Status",
-            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBFrom"] = "Date of Birth From",
-            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBTo"] = "Date of Birth To"
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchMaritalStatus"] = "Marital Status",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchMaritalStatus.Hint"] = "Select the marital status you want to search",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus.Hint"] = "Select the marital status",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBFrom"] = "Birth date from",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBFrom.Hint"] = "Select from which date you want to search",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBTo"] = "Birth date to",
+            ["Plugins.Widgets.HelloWorldWidget.Fields.SearchDOBTo.Hint"] = "Select to which date you want to search. If not selected it will only search for the date selected in form",
+            ["Plugin.Widgets.HelloWorldWidget.BackToList"] = "back to student list",
+            ["Plugin.Widgets.HelloWorldWidget.Students.Info"] = "Student Info",
+            ["Plugin.Widgets.HelloWorldWidget.Deleted"] = "Student has been deleted successfully"
         });
         await base.InstallAsync();
     }

@@ -1,6 +1,9 @@
 @model Nop.Plugin.Widgets.HelloWorldWidget.Models.StudentModel
 @{
-    Layout = "~/Areas/Admin/Views/Shared/_AdminPopupLayout.cshtml";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    //page title
+    ViewBag.PageTitle = T("Admin.Common.AddNew").Text;
+    NopHtml.SetActiveMenuItemSystemName("Student list");
 }
 
 <form asp-controller="HelloWorld" asp-action="Create"
@@ -9,18 +12,22 @@
     <div class="content-header clearfix">
         <h1 class="float-left">
             @T("Admin.Common.AddNew")
+            <small>
+                <i class="fas fa-arrow-circle-left"></i>
+                <a asp-action="Configure">@T("Plugin.Widgets.HelloWorldWidget.BackToList")</a>
+            </small>
         </h1>
+        
         <div class="float-right">
             <button type="submit" name="save" class="btn btn-primary">
                 <i class="far fa-save"></i>
                 @T("Admin.Common.Save")
             </button>
+            <button type="submit" name="save-continue" class="btn btn-primary">
+                <i class="far fa-save"></i>
+                @T("Admin.Common.SaveContinue")
+            </button>
         </div>
     </div>
-
-    <div class="content">
-        <div class="form-horizontal">
-            @await Html.PartialAsync("~/Plugins/Widgets.HelloWorldWidget/Views/_CreateOrUpdate.cshtml", Model)
-        </div>
-    </div>
+    @await Html.PartialAsync("~/Plugins/Widgets.HelloWorldWidget/Views/_CreateOrUpdate.cshtml", Model)
 </form>

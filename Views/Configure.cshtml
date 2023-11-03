@@ -6,16 +6,27 @@
 
 @{
     Layout = "_ConfigurePlugin";
-    NopHtml.SetActiveMenuItemSystemName("nopCommerce hello world application");
+    NopHtml.SetActiveMenuItemSystemName("Student list");
     RenderDate rd = new RenderDate();
-    rd.Format = "DD/MM/YYYY";
+    rd.Format = "MM/DD/YYYY";
 
     const string hideSearchBlockAttributeName = "StudentListPage.HideSearchBlock";
     var hideSearchBlock = false;
 }
 
-<h3>Students:</h3>
 <form asp-controller="HelloWorld" asp-action="Configure" method="post" id="student-form">
+    <div class="content-header clearfix">
+        <h3 class="float-left">
+            Students:
+        </h3>
+        <div class="float-right">
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="fas fa-plus-square"></i>
+                @T("Admin.Common.AddNew")
+            </a>
+        </div>
+    </div>
+    
     <section class="content">
         <div class="container-fluid">
             <div class="form-horizontal">
@@ -116,27 +127,21 @@
                 Title = T("Admin.Common.Edit").Text,
                 ClassName = NopColumnClassDefaults.Button,
                 Width = "100",
-                Render = new RenderCustom("renderColumnEdit")
-                },
-                new ColumnProperty(nameof(StudentModel.Id))
+                Render = new RenderButtonEdit(new DataUrl("Edit"))
+                }
+                @*new ColumnProperty(nameof(StudentModel.Id))
                 {
                 Title = T("Admin.Common.Delete").Text,
                 ClassName = NopColumnClassDefaults.Button,
                 Render = new RenderButtonRemove(T("Admin.Common.Delete").Text),
                 Width = "100"
-                }
+                }*@
                 }
                 })
             </div>
 
-            <script>
-                function renderColumnEdit(data, type, row, meta) {
-                    return '<button onclick=\"javascript:OpenWindow(\'@Url.Content("~/Admin/HelloWorld/Edit/")' + data + '?btnId=btnRefresh&formId=student-form\', 800, 800, true); return false;\" class="btn btn-default"><i class="fas fa-pencil-alt"></i>@T("Admin.Common.Edit").Text</button>';
-                }
-            </script>
-
             <div class="card-footer">
-                <button type="submit" id="btnAddNewOption" name="save" class="btn btn-primary" onclick="javascript:OpenWindow('@(Url.Action("Create", "HelloWorld",  new { btnId = "btnRefresh", formId = "student-form" }))', 800, 800, true); return false;">@T("Plugins.Widgets.HelloWorldWidget.AddNew")</button>
+                @* <button type="submit" id="btnAddNewOption" name="save" class="btn btn-primary" onclick="javascript:OpenWindow('@(Url.Action("Create", "HelloWorld",  new { btnId = "btnRefresh", formId = "student-form" }))', 800, 800, true); return false;">@T("Plugins.Widgets.HelloWorldWidget.AddNew")</button> *@
 
                 <button id="btnRefresh" type="submit" name="save" class="btn btn-default" style="display: none"></button>
             </div>
