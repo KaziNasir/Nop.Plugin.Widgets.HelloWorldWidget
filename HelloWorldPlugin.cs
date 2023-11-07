@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Routing;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
 using Nop.Plugin.Widgets.HelloWorldWidget.Components;
 using Nop.Services.Cms;
+using Nop.Services.Common;
 using Nop.Services.Localization;
 using Nop.Services.Plugins;
 using Nop.Web.Framework;
@@ -25,7 +27,7 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
 
     public async Task<IList<string>> GetWidgetZonesAsync()
     {
-        return await Task.FromResult<IList<string>>(new List<string> { PublicWidgetZones.HomepageTop });
+        return await Task.FromResult<IList<string>>(new List<string> { PublicWidgetZones.AccountNavigationBefore });
     }
 
     public override async Task InstallAsync()
@@ -62,17 +64,18 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
             Title = "Students",
             ControllerName = "HelloWorld",
             ActionName = "Configure",
-            IconClass = "far fa-dot-circle",
+            IconClass = "far fa-user",
             Visible = true,
             RouteValues = new RouteValueDictionary() { { "area", AreaNames.Admin } },
         };
-        var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Third party plugins");
+        /*var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Third party plugins");
         if (pluginNode != null)
-            pluginNode.ChildNodes.Add(menuItem);
+            pluginNode.ChildNodes.Insert(0, menuItem);
         else
-            rootNode.ChildNodes.Add(menuItem);
+            //rootNode.ChildNodes.Add(menuItem);*/
+            rootNode.ChildNodes.Insert(4, menuItem);
 
-        return Task.CompletedTask;
+            return Task.CompletedTask;
     }
 
     public override async Task UninstallAsync()

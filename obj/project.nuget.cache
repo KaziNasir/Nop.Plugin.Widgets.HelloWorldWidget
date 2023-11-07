@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V5xGOHa7vGVgyAhHR70+zGCzn5o+JWCTRVbnvKz6RaVCGjlD0PJEc9X7z5RrSAvKwNGuUF7sycfj3wUYmDhpBg==",
+  "dgSpecHash": "fVzIz7uOI9fgn0RTCw8H5yqRveFny7TUcGgF0PbW0rg1LebpmmzB7oEfc1ZvKpJKEQHRFwHWTTr3mi/qiXa7KA==",
   "success": true,
-  "projectFilePath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj",
+  "projectFilePath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\autofac\\6.4.0\\autofac.6.4.0.nupkg.sha512",

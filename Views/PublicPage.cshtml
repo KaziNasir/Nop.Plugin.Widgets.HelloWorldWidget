@@ -1,0 +1,77 @@
+@using Nop.Plugin.Widgets.HelloWorldWidget.Domain
+@using Nop.Plugin.Widgets.HelloWorldWidget.Models
+@model StudentSearchModel
+
+@{
+    Layout = "_ColumnsTwo";
+    NopHtml.SetActiveMenuItemSystemName("Student list");
+    
+    const string hideSearchBlockAttributeName = "StudentListPage.HideSearchBlock";
+    var hideSearchBlock = false;
+}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+<script>
+    function loadStudents() {
+
+        return $.ajax({
+            url: '/Home/GetStudents',
+            success: function (response) {
+                //...process response
+            }
+        });
+
+    }
+    $(document).ready(function () {
+        $.ajax({
+            url: '../Student/List',
+            success: function (response) {
+                var students = JSON.parse(response).Data                
+                var tableHtml = '<table>';
+                tableHtml += '<tr><th>@T("Plugins.Widgets.HelloWorldWidget.Fields.Name").Text </th>' +
+                '<th>@T("Plugins.Widgets.HelloWorldWidget.Fields.DOB").Text</th>' +
+                '<th>@T("Plugins.Widgets.HelloWorldWidget.Fields.MaritalStatus").Text</th></tr>';
+
+                for (var i = 0; i < students.length; i++) {
+                    var student = students[i];
+
+                    tableHtml += '<tr>';
+                    tableHtml += '<td>' + student.Name + '</td>';
+                    tableHtml += '<td>' + student.DOB + '</td>';
+                    tableHtml += '<td>' + student.GetMaritalStatus + '</td>';
+                    tableHtml += '</tr>';
+                }
+
+                tableHtml += '</table>';
+
+                $('#studentTable').html(tableHtml);
+            }
+        });    
+    });
+</script>
+<div class="content-header clearfix">
+    <h3 class="float-left">
+        Students:
+    </h3>
+</div>
+<div class="cards-group">
+    <div class="card card-default">
+        <div class="card-body">
+            <div id="studentTable"></div>
+        </div>
+    </div>
+</div>

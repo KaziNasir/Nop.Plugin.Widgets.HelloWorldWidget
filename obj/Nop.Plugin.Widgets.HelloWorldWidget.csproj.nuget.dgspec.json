@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj": {}
+    "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj": {}
   },
   "projects": {
-    "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+    "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
       "version": "4.5.0",
       "restore": {
-        "projectUniqueName": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
+        "projectUniqueName": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
         "projectName": "Nop.Core",
-        "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
+        "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\obj\\",
+        "outputPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -120,14 +120,14 @@
         }
       }
     },
-    "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+    "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
       "version": "4.5.0",
       "restore": {
-        "projectUniqueName": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
+        "projectUniqueName": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
         "projectName": "Nop.Data",
-        "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
+        "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\obj\\",
+        "outputPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -147,8 +147,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               }
             }
           }
@@ -216,14 +216,14 @@
         }
       }
     },
-    "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+    "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
       "version": "4.5.0",
       "restore": {
-        "projectUniqueName": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
+        "projectUniqueName": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
         "projectName": "Nop.Services",
-        "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
+        "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\obj\\",
+        "outputPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -243,11 +243,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
               }
             }
           }
@@ -327,14 +327,14 @@
         }
       }
     },
-    "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj": {
+    "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj",
+        "projectUniqueName": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj",
         "projectName": "Nop.Plugin.Widgets.HelloWorldWidget",
-        "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj",
+        "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\Nop.Plugin.Widgets.HelloWorldWidget.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\obj\\",
+        "outputPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Plugins\\Nop.Plugin.Widgets.HelloWorldWidget\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -354,14 +354,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj"
               }
             }
           }
@@ -395,14 +395,14 @@
         }
       }
     },
-    "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+    "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
       "version": "4.5.0",
       "restore": {
-        "projectUniqueName": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
+        "projectUniqueName": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
         "projectName": "Nop.Web.Framework",
-        "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
+        "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\obj\\",
+        "outputPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -422,14 +422,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
               }
             }
           }
@@ -481,14 +481,14 @@
         }
       }
     },
-    "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj": {
+    "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj": {
       "version": "4.70.0",
       "restore": {
-        "projectUniqueName": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj",
+        "projectUniqueName": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj",
         "projectName": "Nop.Web",
-        "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj",
+        "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\Nop.Web.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\obj\\",
+        "outputPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -508,17 +508,17 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
               },
-              "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-                "projectPath": "E:\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+              "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+                "projectPath": "E:\\To Move (Media)\\BS Courses\\Test Projects\\nopCommerce\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
               }
             }
           }

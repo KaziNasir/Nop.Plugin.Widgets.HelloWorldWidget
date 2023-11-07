@@ -12,7 +12,7 @@
       asp-route-formId="@Context.Request.Query["formId"]">
     <div class="content-header clearfix">
         <h1 class="float-left">
-            @T("Admin.Common.Edit")
+            @T("Admin.Common.Edit") - @Model.Name
             <small>
                 <i class="fas fa-arrow-circle-left"></i>
                 <a asp-action="Configure">@T("Plugin.Widgets.HelloWorldWidget.BackToList")</a>

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Globalization;
+using Microsoft.AspNetCore.Mvc;
 using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 using Nop.Plugin.Widgets.HelloWorldWidget.Factories;
 using Nop.Plugin.Widgets.HelloWorldWidget.Models;
@@ -84,6 +85,10 @@ public class HelloWorldController : BasePluginController
         if (student == null)
             return RedirectToAction("Configure");
 
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Student dob: " + student.DOB.ToString());
+        Console.ForegroundColor = ConsoleColor.White;
+
         var model = new StudentModel()
         {
             Id = student.Id,
@@ -91,6 +96,10 @@ public class HelloWorldController : BasePluginController
             DOB = student.DOB,
             MaritalStatus = student.MaritalStatus
         };
+
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("StudentModel dob: " + model.DOB.ToString());
+        Console.ForegroundColor = ConsoleColor.White;
 
         return View("~/Plugins/Widgets.HelloWorldWidget/Views/Edit.cshtml", model);
     }

@@ -13,7 +13,7 @@ public class StudentService : IStudentService
     }
 
     public virtual async Task<IPagedList<Student>> GetAllStudentsAsync(int studentId = 0, int pageIndex = 0, int pageSize = int.MaxValue,
-        string? searchName = null, DateTime? searchDOBFrom = null, DateTime? searchDOBTo = null, IList<MaritalStatus> selectedMaritalStatus = null)
+        string? searchName = "", DateTime? searchDOBFrom = null, DateTime? searchDOBTo = null, IList<MaritalStatus> selectedMaritalStatus = null)
     {
         var rez = await _studentRepository.GetAllAsync(query =>
         {
@@ -50,6 +50,7 @@ public class StudentService : IStudentService
 
         return new PagedList<Student>(rez, pageIndex, pageSize);
     }
+
     public virtual async Task<Student> GetStorePickupPointByIdAsync(int studentId)
     {
         return await _studentRepository.GetByIdAsync(studentId);
@@ -66,5 +67,5 @@ public class StudentService : IStudentService
     public virtual async Task DeleteStudentAsync(Student student)
     {
         await _studentRepository.DeleteAsync(student, false);
-    }
+    }    
 }
