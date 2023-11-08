@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Nop.Plugin.Widgets.HelloWorldWidget.Domain;
 using Nop.Plugin.Widgets.HelloWorldWidget.Factories;
 using Nop.Plugin.Widgets.HelloWorldWidget.Models;

@@ -6,8 +6,6 @@
     Layout = "_ColumnsTwo";
     NopHtml.SetActiveMenuItemSystemName("Student list");
     
-    const string hideSearchBlockAttributeName = "StudentListPage.HideSearchBlock";
-    var hideSearchBlock = false;
 }
 <style>
     table {
@@ -18,24 +16,10 @@
     th, td {
         text-align: left;
         padding: 8px;
-        border: 1px solid #ddd;
-    }
-
-    th {
-        background-color: #f2f2f2;
+        border: 1px solid;
     }
 </style>
 <script>
-    function loadStudents() {
-
-        return $.ajax({
-            url: '/Home/GetStudents',
-            success: function (response) {
-                //...process response
-            }
-        });
-
-    }
     $(document).ready(function () {
         $.ajax({
             url: '../Student/List',
@@ -64,9 +48,9 @@
     });
 </script>
 <div class="content-header clearfix">
-    <h3 class="float-left">
+    <h2 class="float-left">
         Students:
-    </h3>
+    </h2>
 </div>
 <div class="cards-group">
     <div class="card card-default">

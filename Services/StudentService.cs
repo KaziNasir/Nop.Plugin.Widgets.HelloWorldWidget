@@ -67,5 +67,5 @@ public class StudentService : IStudentService
     public virtual async Task DeleteStudentAsync(Student student)
     {
         await _studentRepository.DeleteAsync(student, false);
-    }    
+    }
 }

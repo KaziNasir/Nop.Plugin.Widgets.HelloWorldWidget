@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Nop.Web.Areas.Admin.Factories;
 using Nop.Web.Framework.Components;
 
 namespace Nop.Plugin.Widgets.HelloWorldWidget.Components;

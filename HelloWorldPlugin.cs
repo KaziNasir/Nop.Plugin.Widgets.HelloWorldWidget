@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Routing;
+﻿using Microsoft.AspNetCore.Routing;
 using Nop.Plugin.Widgets.HelloWorldWidget.Components;
 using Nop.Services.Cms;
-using Nop.Services.Common;
 using Nop.Services.Localization;
 using Nop.Services.Plugins;
 using Nop.Web.Framework;
@@ -27,7 +25,7 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
 
     public async Task<IList<string>> GetWidgetZonesAsync()
     {
-        return await Task.FromResult<IList<string>>(new List<string> { PublicWidgetZones.AccountNavigationBefore });
+        return await Task.FromResult<IList<string>>(new List<string> { PublicWidgetZones.HomepageBeforeCategories });
     }
 
     public override async Task InstallAsync()
@@ -73,9 +71,9 @@ public class HelloWorldPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
             pluginNode.ChildNodes.Insert(0, menuItem);
         else
             //rootNode.ChildNodes.Add(menuItem);*/
-            rootNode.ChildNodes.Insert(4, menuItem);
+        rootNode.ChildNodes.Insert(4, menuItem);
 
-            return Task.CompletedTask;
+        return Task.CompletedTask;
     }
 
     public override async Task UninstallAsync()
